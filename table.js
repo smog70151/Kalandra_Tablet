@@ -131,28 +131,28 @@ $(document).ready(function () {
     });
 
     //button 4x5
-    $('#button_4x5').on('click', function () {
-        row = 4;
-        col = 5;
-        $("#input_container").empty();
-        constructTablet();
-    });
+    // $('#button_4x5').on('click', function () {
+    //     row = 4;
+    //     col = 5;
+    //     $("#input_container").empty();
+    //     constructTablet();
+    // });
 
     //button 5x4
-    $('#button_5x4').on('click', function () {
-        row = 5;
-        col = 4;
-        $("#input_container").empty();
-        constructTablet();
-    });
+    // $('#button_5x4').on('click', function () {
+    //     row = 5;
+    //     col = 4;
+    //     $("#input_container").empty();
+    //     constructTablet();
+    // });
 
     //button 5x5
-    $('#button_5x5').on('click', function () {
-        row = 5;
-        col = 5;
-        $("#input_container").empty();
-        constructTablet();
-    });
+    // $('#button_5x5').on('click', function () {
+    //     row = 5;
+    //     col = 5;
+    //     $("#input_container").empty();
+    //     constructTablet();
+    // });
 
     //button click
     $('#button').on('click', function () {
