@@ -130,10 +130,10 @@ body{
 }
 
 .result .yellow{
-    background-color: yellow;
-    color: yellow;
+    /* background-color: yellow;
+    color: yellow; */
     filter: none;
-    background-image:url("");
+    background-image:url("./imgs/LakeTileIconWatertoEmpty.png");
     background-size: cover;
 }
 
