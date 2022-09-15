@@ -146,10 +146,16 @@ body{
 }
 
 .result span.green,
-.result span.yellow,
 .result span.red{
     background-color: unset !important;
     font-weight: bold;
+}
+
+.result span.yellow,{
+    color: yellow;
+    font-weight: bold;
+    background-image:url("./imgs/LakeTileIconWatertoEmpty.png");
+    background-size: cover;
 }
 
 #footer{
