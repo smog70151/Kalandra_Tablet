@@ -52,6 +52,9 @@ body{
     background-size: cover;
 }
 
+#button_4x5,
+#button_5x4,
+#button_5x5,
 #button{
     cursor: pointer;
     font-weight: bold;
@@ -66,6 +69,9 @@ body{
     border-right-color: rgb(45, 81, 114);
 }
 
+#button_4x5,
+#button_5x4,
+#button_5x5,
 #button:hover{
     filter: grayscale(25%) brightness(150%);
 }
@@ -77,6 +83,14 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 50px;
+}
+
+#format{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .result{
@@ -151,11 +165,11 @@ body{
     font-weight: bold;
 }
 
-.result span.yellow,{
+.result span.yellow{
     color: yellow;
     font-weight: bold;
-    background-image:url("");
-    background-size: cover;
+    background-image: none;
+    background-color: unset !important;
 }
 
 #footer{

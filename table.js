@@ -1,10 +1,13 @@
+row = 5
+col = 5
+
 //append input tablet
 function constructTablet(){
     let html = "";
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < row; i++){
         html += '<div class="row">';
-        for(let j = 0; j < 5; j++){
-            html += '<div class="cell" id="' + (i * 5 + j) + '"></div>';
+        for(let j = 0; j < col; j++){
+            html += '<div class="cell" id="' + (i * col + j) + '"></div>';
         }
         html += '</div>';
     }
@@ -14,7 +17,7 @@ function constructTablet(){
 //number of ones in number(binary)
 function bitNumber(number) {
     let res = 0;
-    for(let i = 0; i < 25; i++){
+    for(let i = 0; i < row*col; i++){
         if(number & 1){
             res++;
         }
@@ -29,7 +32,7 @@ function tabletDifference(configuration, pattern) {
     let add = 0;
     let move = 0;
 
-    for(let i = 0; i < 25; i++){
+    for(let i = 0; i < row*col; i++){
         if(configuration & pattern & 1){
             common++;
         }
@@ -77,9 +80,9 @@ function compareFn(a, b) {
 function constructResult(configuration, input_tablet){
     let html = '<div class="result">';
     html += '<div class="result_table">';
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < row; i++){
         html += '<div class="row">';
-        for(let j = 0; j < 5; j++){
+        for(let j = 0; j < col; j++){
             html += '<div class="cell';
             if(configuration[0] & 1){
                 html += ' active';
@@ -93,7 +96,7 @@ function constructResult(configuration, input_tablet){
             else if( (input_tablet & 1) && !(configuration[0] & 1)){
                 html += ' red';
             }
-            html += '" id="' + (i * 5 + j) + '"></div>';
+            html += '" id="' + (i * col + j) + '"></div>';
             configuration[0] = configuration[0] >>> 1;
             input_tablet = input_tablet >>> 1;
         }
@@ -125,6 +128,30 @@ $(document).ready(function () {
         else{
             $(this).addClass('active');
         }
+    });
+
+    //button 4x5
+    $('#button_4x5').on('click', function () {
+        row = 4;
+        col = 5;
+        $("#input_container").empty();
+        constructTablet();
+    });
+
+    //button 5x4
+    $('#button_5x4').on('click', function () {
+        row = 5;
+        col = 4;
+        $("#input_container").empty();
+        constructTablet();
+    });
+
+    //button 5x5
+    $('#button_5x5').on('click', function () {
+        row = 5;
+        col = 5;
+        $("#input_container").empty();
+        constructTablet();
     });
 
     //button click
