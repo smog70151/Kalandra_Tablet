@@ -5,7 +5,7 @@ function constructTablet(){
         html += '<div class="row">';
         for(let j = 0; j < 5; j++){
             html += '<div class="cell" id="' + (i * 5 + j) + '"></div>';
-        }   
+        }
         html += '</div>';
     }
     $("#input_container").append($(html));
@@ -96,7 +96,7 @@ function constructResult(configuration, input_tablet){
             html += '" id="' + (i * 5 + j) + '"></div>';
             configuration[0] = configuration[0] >>> 1;
             input_tablet = input_tablet >>> 1;
-        }   
+        }
         html += '</div>'
     }
     html += '</div>';
@@ -107,7 +107,7 @@ function constructResult(configuration, input_tablet){
     html += '</div></div>';
     $("#output_container").append($(html));
 }
-  
+
 
 $(document).ready(function () {
     //init input table
@@ -156,9 +156,10 @@ $(document).ready(function () {
             //sort results
             result_array.sort(compareFn);
             //print results
-            result_array.forEach(function myFunction(configuration) {
-                constructResult(configuration, table_configuration);
-            });
+            constructResult(result_array[0], table_configuration);
+            // result_array.forEach(function myFunction(configuration) {
+            //     constructResult(configuration, table_configuration);
+            // });
         }
     });
 });
