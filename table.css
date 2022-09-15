@@ -154,7 +154,7 @@ body{
 .result span.yellow,{
     color: yellow;
     font-weight: bold;
-    background-image:url("./imgs/LakeTileIconWatertoEmpty.png");
+    background-image:url("");
     background-size: cover;
 }
 
