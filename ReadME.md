@@ -1,5 +1,6 @@
 # Kalandra Tablet Fork
-Just for convienience.
+Just for convienience and personal UI.
+- [Link](https://smog70151.github.io/Kalandra_Tablet_Fork/)
 
 
 ## Support Format
