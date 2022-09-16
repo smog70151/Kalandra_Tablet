@@ -76,31 +76,43 @@ function compareFn(a, b) {
     return 0;
 }
 
-//construct result tablet
+//construct Result & Preview Tablet
 function constructResult(configuration, input_tablet){
     let html = '<div class="result">';
+    let _html = '<div class="result">';
+    html += '<div style="text-align:center;"><font size="4"><span><b> Method </b></span></font></div>';
     html += '<div class="result_table">';
+    _html += '<div style="text-align:center;"><font size="4"><span><b> Preview </b></span></font></div>';
+    _html += '<div class="result_table">';
     for(let i = 0; i < row; i++){
         html += '<div class="row">';
+        _html += '<div class="row">';
         for(let j = 0; j < col; j++){
             html += '<div class="cell';
+            _html += '<div class="cell';
             if(configuration[0] & 1){
                 html += ' active';
+                _html += ' active';
             }
             if(configuration[0] & input_tablet & 1){
                 html += ' green';
+                _html += ' active';
             }
             else if((configuration[0] & 1) && !(input_tablet & 1)){
                 html += ' yellow';
+                _html += ' active';
             }
             else if( (input_tablet & 1) && !(configuration[0] & 1)){
                 html += ' red';
+                _html += '';
             }
             html += '" id="' + (i * col + j) + '"></div>';
+            _html += '" id="' + (i * col + j) + '"></div>';
             configuration[0] = configuration[0] >>> 1;
             input_tablet = input_tablet >>> 1;
         }
-        html += '</div>'
+        html += '</div>';
+        _html += '</div>';
     }
     html += '</div>';
     html += '<div class="result_text">';
@@ -108,9 +120,16 @@ function constructResult(configuration, input_tablet){
     html += '<div><span>Tiles to add: </span><span class="yellow">' + configuration[2] + '</span></div>';
     html += '<div><span>Tiles to move: </span><span class="red">' + configuration[3] + '</span></div>';
     html += '</div></div>';
-    $("#output_container").append($(html));
-}
 
+    _html += '</div>';
+    _html += '<div class="result_text">';
+    _html += '<div><span>Common tiles: </span><span class="green">' + configuration[1] + '</span></div>';
+    _html += '<div><span>Tiles to add: </span><span class="yellow">' + configuration[2] + '</span></div>';
+    _html += '<div><span>Tiles to move: </span><span class="red">' + configuration[3] + '</span></div>';
+    _html += '</div></div>';
+    $("#output_container").append($(html));
+    $("#output_container").append($(_html));
+}
 
 $(document).ready(function () {
     //init input table
